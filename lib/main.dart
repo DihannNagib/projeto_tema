@@ -1,3 +1,4 @@
+import 'package:app/screen/initial_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'screen/my_home.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData.light(),
             darkTheme: ThemeData.dark(),
             themeMode: state,
-            home: const MyHomePage(),
+            home: InitialPage(),
           );
         },
       ),
