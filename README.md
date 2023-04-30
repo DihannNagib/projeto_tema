@@ -2,15 +2,24 @@
 
 Projeto Flutter tema
 
-## Getting Started
+## Task
 
-This project is a starting point for a Flutter application.
+Deve-se adicionar a funcionalidade de alterar o tema do aplicativo entre:
 
-A few resources to get you started if this is your first Flutter project:
+Tema claro;
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Tema escuro;
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Sistema (esse será o valor padrão selecionado).
+
+Essa funcionalidade deverá ser acessível a todos os usuários da aplicação.
+
+Deve-se utilizar cubit para o desenvolvimento.
+
+Deve seguir a identidade visual do aplicativo.
+
+Deverá exibir a versão do aplicativo no rodapé da página de configuração.
+
+Deve ser visível a todos os usuários da aplicação.
+
+Ter navegação entre as telas: initial, menu, configurações.
