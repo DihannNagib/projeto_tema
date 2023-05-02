@@ -1,4 +1,4 @@
-import 'package:app/screen/my_home.dart';
+import 'package:app/screen/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 class InitialPage extends StatelessWidget {
@@ -27,12 +27,9 @@ class InitialPage extends StatelessWidget {
                   children: [
                     TextButton(
                       child:
-                      Text('Configurações', textAlign: TextAlign.start,),
+                      const Text('Configurações', textAlign: TextAlign.start,),
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const MyHomePage()),
-                        );
+                        Navigator.push(context, SettingScreen.route());
                       },
                     ),
                   ],
