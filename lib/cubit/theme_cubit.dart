@@ -1,19 +1,26 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
-class ThemeCubit extends Cubit<ThemeMode>{
-  ThemeCubit() : super(ThemeMode.system);
+class ThemeCubit extends Cubit<ThemeMode> {
+  final SharedPreferences _prefs;
 
-  void changeDark() {
-    if (state == ThemeMode.light || state == ThemeMode.system){
-      return emit(ThemeMode.dark);
-    }
+  @visibleForTesting
+  static const String themeKey = '__theme_key__';
+
+  ThemeCubit({required SharedPreferences prefs})
+      : _prefs = prefs,
+        super(ThemeMode.system);
+
+  void init(){
+    final index = _prefs.getInt(themeKey);
+    return emit(ThemeMode.values[index ?? 0]);
   }
-  void changeLight() {
-    if (state == ThemeMode.dark || state == ThemeMode.system){
-      return emit(ThemeMode.light);
-    }
-    }
 
+  Future<void> changeTheme(ThemeMode themeMode) async {
+    await _prefs.setInt(themeKey, themeMode.index);
+
+    return emit(themeMode);
   }
+}
